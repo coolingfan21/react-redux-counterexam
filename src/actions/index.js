@@ -2,6 +2,7 @@ export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
 export const SET_DIFF = "SET_DIFF";
 
+// action creator
 export const increment = () => {
   return {
     type: INCREMENT
@@ -12,9 +13,9 @@ export const decrement = () => {
     type: DECREMENT
   };
 };
-export const setDiff = diffValue => {
+export const setDiff = diff => {
   return {
     type: SET_DIFF,
-    value: diffValue
+    diff: diff
   };
 };
