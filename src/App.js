@@ -1,7 +1,16 @@
 import React from "react";
+import Buttons from "./components/Buttons";
+import Counter from "./components/Counter";
+import Option from "./components/Option";
 
 function App() {
-  return <div>Hello world!</div>;
+  return (
+    <div>
+      <Counter />
+      <Option />
+      <Buttons />
+    </div>
+  );
 }
 
 export default App;
