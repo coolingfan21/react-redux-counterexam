@@ -3,31 +3,28 @@ import { connect } from "react-redux";
 import { setDiff } from "../actions";
 
 class Option extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div>
         <input
           type="number"
-          onChange={this.props.option}
           value={this.props.value}
+          onChange={e => this.props.diffChange(e.target.value)}
         />
       </div>
     );
   }
 }
+
 const mapStateToProps = state => {
   return {
-    value: state.value
+    value: state.diff
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    option: e => dispatch(setDiff(e.target.value))
+    diffChange: diff => dispatch(setDiff(diff))
   };
 };
-
-Option = connect(mapStateToProps, mapDispatchToProps);
+Option = connect(mapStateToProps, mapDispatchToProps)(Option);
 export default Option;

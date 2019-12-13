@@ -1,26 +1,26 @@
-import { INCREMENT, DECREMENT, SET_DIFF } from "../actions";
+import { INCREMENT, DECREMENT, SET_DIFF } from "../actions/index";
 
 const initialState = {
   value: 0,
   diff: 0
 };
-const reducer = (state = initialState, action) => {
+const counterReducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
       return Object.assign({}, state, {
-        value: state.value + action.diff
+        value: state.value + state.diff
       });
     case DECREMENT:
       return Object.assign({}, state, {
-        value: state.value - action.diff
+        value: state.value - state.diff
       });
     case SET_DIFF:
       return Object.assign({}, state, {
-        diff: action.diff
+        diff: parseInt(action.diff)
       });
     default:
       return state;
   }
 };
 
-export default reducer;
+export default counterReducer;
